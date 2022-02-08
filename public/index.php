@@ -1,5 +1,8 @@
 <?php
+session_status();
+define('CHKINCLUDE', true);
 require_once(__DIR__ . '/../inc/bootstrap/bootstrap.php');
 
-listAccounts();
+$check = 'contact@globalgeek.net';
+mailAccountsCheckExists($check);
 

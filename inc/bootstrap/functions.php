@@ -1,7 +1,24 @@
 
 <?php
+if(!defined('CHKINCLUDE')){
+    die('Error: File not directly accessible');
+}
 
-function listAccounts()
+function tokenGenerate($s4_token_str = 16)
+{
+    $s4_token = bin2hex(openssl_random_pseudo_bytes($s4_token_str, $isStrong));
+
+    $isStrong;
+
+    return $s4_token;
+}
+
+
+
+###################### 
+## cPanel API funcs ##
+######################
+function mailAccountsList()
 {
 
     $s4_cpanel = new cpanelAPI(S4CFG_CPUSER, S4CFG_CPPASS, S4CFG_CPHOST);
@@ -33,6 +50,37 @@ function listAccounts()
     unset($s4_cpanel);
 
 }
+
+
+function mailAccountsCheckExists($email = null) // Returns true if email already exists - returns false otherwise
+{
+    $s4_cpanel = new cpanelAPI(S4CFG_CPUSER, S4CFG_CPPASS, S4CFG_CPHOST);
+    $s4_data = $s4_cpanel->uapi->Email->list_pops();
+    
+    foreach($s4_data['data'] as $record){
+        if($record['email'] == $email){
+            return true;
+            
+        }
+    }
+    return false;
+}
+
+
+function mailAccountsCreate($email = null) // Returns true if email already exists - returns false otherwise
+{
+    $s4_cpanel = new cpanelAPI(S4CFG_CPUSER, S4CFG_CPPASS, S4CFG_CPHOST);
+    $s4_data = $s4_cpanel->uapi->Email->list_pops();
+    
+    foreach($s4_data['data'] as $record){
+        if($record['email'] == $email){
+            return true;
+            
+        }
+    }
+    return false;
+}
+
 
 
 function mailDomainsGet()

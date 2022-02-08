@@ -1,8 +1,16 @@
 <?php
 //Require config file
-require_once(__DIR__ . '/../../config/.config.php') or die("No config file");
+require_once(__DIR__ . '/../../config/.config.php');
+
+//Require header file
+require_once(__DIR__ . '/../../public/assets/php/header.inc.php');
+
+//Require functions file
+require_once(__DIR__ . '/functions.php');
 
 //Require cPanel UAPI class
-require('class/cpaneluapi.class.php');
-//instantiate cPanel UAPI class
-$s4_cPanel = new cpanelAPI('', '', '');
+require_once(__DIR__ . '/../vendor/cpanel_uapi/Cpanel.php');
+
+
+
+?>

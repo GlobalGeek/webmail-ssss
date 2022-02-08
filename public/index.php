@@ -1,9 +1,5 @@
 <?php
-require('class/cpaneluapi.class.php');
+require_once(__DIR__ . '/../inc/bootstrap/bootstrap.php');
 
-$cPanel = new cpanelAPI('', '', '');
+listAccounts();
 
-$response = $cPanel->uapi->Email->list_pops();
-//echo $response->data->maximum_ftp_accounts;
-
-echo '<pre>' . var_dump($response) . '</pre>';

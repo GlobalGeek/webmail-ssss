@@ -148,7 +148,7 @@ class cpanelAPI
         if (count($arguments) < 1 || !is_array($arguments[0]))
             $arguments[0] = [];
         $this->json = $this->APIcall($name, $arguments[0]);
-        return json_decode($this->json);
+        return json_decode($this->json, true); //json_decode set to return array instead of object
     }
 
     /**

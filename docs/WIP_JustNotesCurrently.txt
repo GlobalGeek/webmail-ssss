@@ -1,0 +1,29 @@
+This is NOT documentation. This is a place to keep notes that 
+will help when it comesto creating the documentation.
+
+
+## Maximum emails per hour ##
+/var/cpanel/users/[username]
+MAX_EMAIL_PER_HOUR = 
+
+
+## Protecting your users from SPAM ##
+Apache Spamassassin tips
+https://cwiki.apache.org/confluence/display/SPAMASSASSIN/UsingSpamAssassin
+
+Enable SPAM inbox so people can read/collect spam/false positives if necessary
+Enable Apache SpamAssassin™ Spam Box delivery for messages marked as spam (user configurable) = ON
+
+
+## Fighting abuse of your service ##
+WHM Home >> Server Configuration >> Tweak Settings >> Email
+Monitor the number of unique recipients per hour to detect potential spammers.
+Select the action for the system to take on an email account when it detects a potential spammer.
+Number of unique recipients per hour to trigger potential spammer notification.
+
+Enable Horde Webmail
+Enable Roundcube webmail
+Enable BoxTrapper spam trap
+Enable Apache SpamAssassin™ spam filter
+
+More info: https://documentation.cpanel.net/display/74Docs/Tweak+Settings+-+Mail#TweakSettings-Mail-Monitorthenumberofuniquerecipientsperhourtodetectpotentialspammers.

@@ -17,3 +17,12 @@ define('S4CFG_DBNAME', 'webmail_ssss');         //Database name
 define('S4CFG_CPHOST', 'cpanel.example.com');   //cPanel host address
 define('S4CFG_CPUSER', 'cpanelUsername');       //cPanel user name
 define('S4CFG_CPPASS', 'cpanelPassword');       //cPanel password
+
+define('S4CFG_DOMAIN', 'example.com');          //Email domain
+
+
+##################################################
+## Dont change unless you know what you're doing #
+##################################################
+define('S4CFG_SYSHASH', 'sha512');
+define('S4CFG_FWDSYSTEM', 'fwd');               //fwd, system, pipe

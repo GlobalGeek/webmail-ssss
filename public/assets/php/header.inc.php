@@ -15,6 +15,3 @@
     <title>Webmail Self-Service Signup & Signin</title>
 </head>
 
-<body>
-<div class="page-wrapper">
-<div class="content-wrapper">
